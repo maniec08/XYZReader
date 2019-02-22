@@ -15,14 +15,22 @@
      limitations under the License.
 -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-
+        <item name="colorPrimary">@color/theme_primary</item>
+        <item name="colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="colorAccent">@color/theme_accent</item>
     </style>
 
-    <style name="Theme.Bacon.Detail">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <style name="Theme.Bacon.Detail" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="Toolbar.SubTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

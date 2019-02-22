@@ -16,8 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -184,6 +182,7 @@ public class ArticleListActivity extends ActionBarActivity implements
                         + "<br/>" + " by "
                         + mCursor.getString(ArticleLoader.Query.AUTHOR)));
             }
+            holder.thumbnailView.setContentDescription(getString(R.string.image_for_cd) + mCursor.getString(ArticleLoader.Query.TITLE));
             holder.thumbnailView.setImageUrl(
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
                     ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
@@ -204,7 +203,7 @@ public class ArticleListActivity extends ActionBarActivity implements
         public ViewHolder(View view) {
             super(view);
             thumbnailView = (DynamicHeightNetworkImageView) view.findViewById(R.id.thumbnail);
-            titleView = (TextView) view.findViewById(R.id.article_title);
+            titleView = (TextView) view.findViewById(R.id.article_sub_title);
             subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
         }
     }
